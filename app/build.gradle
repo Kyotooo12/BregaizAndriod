@@ -1,0 +1,29 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+}
+
+android {
+    namespace 'com.bregaiz.system'
+    compileSdk 35
+
+    defaultConfig {
+        applicationId 'com.bregaiz.system'
+        minSdk 23
+        targetSdk 35
+        versionCode 1
+        versionName '1.0'
+    }
+
+    signingConfigs {
+        debug {
+            // The release bundle is signed with the temporary debug key for classroom testing.
+        }
+    }
+    buildTypes {
+        release {
+            signingConfig signingConfigs.debug
+            minifyEnabled false
+        }
+    }
+}

@@ -1,3 +1,4 @@
+
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
@@ -15,11 +16,21 @@ android {
         versionName '1.0'
     }
 
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    kotlinOptions {
+        jvmTarget = '17'
+    }
+
     signingConfigs {
         debug {
-            // The release bundle is signed with the temporary debug key for classroom testing.
+            // Temporary debug signing for classroom testing.
         }
     }
+
     buildTypes {
         release {
             signingConfig signingConfigs.debug
@@ -27,3 +38,4 @@ android {
         }
     }
 }
+
